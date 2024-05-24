@@ -32,12 +32,15 @@ output_signature=$(echo "$output" | grep "signature: " | sed "s/signature: /sig_
 
 if [ "$keygen_pk" != "$output_pk" ]; then
     echo "keygen_pk mismatch for $1"
+    echo "$keygen_pk\n$output_pk"
     exit 1
 elif [ "$keygen_sk" != "$output_sk" ]; then
     echo "keygen_sk mismatch for $1"
+    echo "$keygen_sk\n$output_sk"
     exit 1
 elif [ "$sig_signature" != "$output_signature" ]; then
     echo "sig_signature mismatch for $1"
+    echo "$sig_signature\n$output_signature"
     exit 1
 else
     echo "Vector tests succeeded for $1"

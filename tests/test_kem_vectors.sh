@@ -41,10 +41,11 @@ if [ "$keygen_pk" != "$output_pk" ]; then
     exit 1
 elif [ "$keygen_sk" != "$output_sk" ]; then
     echo "keygen_sk mismatch for $1"
+    echo "$keygen_sk\n$output_sk"
     exit 1
 elif [ "$encaps_c" != "$output_c" ]; then
-    echo "$encaps_c\n$output_c"
     echo "encaps_c mismatch for $1"
+    echo "$encaps_c\n$output_c"
     exit 1
 else
     echo "Vector tests succeeded for $1"
